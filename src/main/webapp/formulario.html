@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+
+<h1>Formulario de ingreso de dispositivo</h1>
+	
+	<form action="#" th:action="@{/}" th:object="${dispositivo}" method="post">
+            <table>
+                <tr>
+                    <td>Name:</td>
+                    <td><input type="text" th:field="*{nombre}" /></td>
+                    <td th:if="${#fields.hasErrors('nombre')}" th:errors="*{nombre}">Name Error</td>
+                </tr>
+                <tr>
+                    <td>Age:</td>
+                    <td><input type="text" th:field="*{version}" /></td>
+                    <td th:if="${#fields.hasErrors('version')}" th:errors="*{version}">Age Error</td>
+                </tr>
+                <tr>
+                    <td><button type="submit">Guardar</button></td>
+                </tr>
+            </table>
+        </form>
+
+<br>
+<a href="lista">Lista de dispositivos</a>
+
+</body>
+</html>
